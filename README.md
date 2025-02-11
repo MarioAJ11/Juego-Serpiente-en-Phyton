@@ -1,4 +1,4 @@
-
+![img](image.png)
 ---
 
 # Juego Snake PRO
@@ -32,15 +32,10 @@
 Sigue estos pasos para jugar en Windows sin necesidad de utilizar un IDE como PyCharm o Visual Studio Code:
 
 ### Paso 1: Instalar Python
-Antes de jugar, asegúrate de que tienes instalado **Python 3.x** en tu computadora.
+Antes de jugar, asegúrate de que tienes instalado **Python 3.x** en tu ordenador.
 
 1. Descarga Python desde el sitio oficial: [Descargar Python](https://www.python.org/downloads/).
 2. Asegúrate de marcar la opción "Add Python to PATH" al momento de instalar.
-3. Verifica que Python esté correctamente instalado abriendo la consola de comandos (CMD) y escribiendo:
-   ```
-   python --version
-   ```
-   Deberías ver algo como: `Python 3.x.x`.
 
 ### Paso 2: Descargar el código del juego
 1. Guarda el archivo del juego (el código Python proporcionado) como `snake_pro.py` en una carpeta de tu elección.
@@ -51,6 +46,7 @@ Antes de jugar, asegúrate de que tienes instalado **Python 3.x** en tu computad
    ```
    cd C:\ruta\de\la\carpeta
    ```
+   O también doble click en el el .py
 3. Una vez en la carpeta del juego, escribe el siguiente comando para ejecutar el juego:
    ```
    python snake_pro.py
@@ -62,3 +58,8 @@ El juego se abrirá en una nueva ventana, donde podrás comenzar a jugar inmedia
 ---
 
 ¡Esperamos que disfrutes de **Snake PRO**!
+![img2](image-1.png)
+
+Autor: Mario Alguacil Juárez
+
+PD: El código es muy mejorable, simplemente fue ejercicio hecho en clase en 2 horas :)
