@@ -1,4 +1,4 @@
-![img](image.png)
+![img](img/image.png)
 ---
 
 # Juego Snake PRO
@@ -58,7 +58,7 @@ El juego se abrirá en una nueva ventana, donde podrás comenzar a jugar inmedia
 ---
 
 ¡Esperamos que disfrutes de **Snake PRO**!
-![img2](image-1.png)
+![img2](img/image-1.png)
 
 Autor: Mario Alguacil Juárez
 
