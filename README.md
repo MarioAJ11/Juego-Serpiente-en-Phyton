@@ -1,4 +1,3 @@
-Aquí te dejo un README para tu juego de Snake en Python:
 
 ---
 

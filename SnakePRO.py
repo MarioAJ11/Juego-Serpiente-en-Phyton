@@ -178,7 +178,7 @@ def reiniciarCuerpo():
     cabeza.direction = "stop"
     marcador.clear()
     marcador.write(f"Puntuación: {puntuacion}     Max. puntuacion: {maxPuntuacion}      Vida: {vida}", align="center", font="Courier")
-    print("Has perdido tus vidas se reiniciara al centro")
+    print("Has perdido una vida se reiniciará al inicio con tu cuerpo compleato")
 
 
 print("Bienvenido snake pro, que disfrute el juego.")
