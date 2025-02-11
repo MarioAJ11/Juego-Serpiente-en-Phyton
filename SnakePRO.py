@@ -28,6 +28,7 @@ ventana.title("Juego de SNAKE")
 ventana.bgcolor("green")
 # Determinamos el tamaño de la ventana
 ventana.setup(width=600,height=600)
+ventana.resizable(False, False)
 # Hace más visual la animación
 ventana.tracer(0)
 
