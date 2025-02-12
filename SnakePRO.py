@@ -31,6 +31,7 @@ ventana.setup(width=600,height=600)
 ventana._root.resizable(False, False)
 # Hace más visual la animación
 ventana.tracer(0)
+salir = False
 
 # Dibujar la cabeza de la serpiente con turtle.Turtle() lo que conseguimos es una pluma
 cabeza = turtle.Turtle()
@@ -172,22 +173,29 @@ def limpiarSegmentos():
 def reiniciarCuerpo():
     cabeza.goto(0,0)
     for segmento in segmentos:
-        segmento.goto(400,400)
+        segmento.goto(400,400)    
+    comidaPlus.hideturtle()
     posicionComida()
     posicionBomba()
     cabeza.direction = "stop"
     marcador.clear()
+    puntuacion = 0
     marcador.write(f"Puntuación: {puntuacion}     Max. puntuacion: {maxPuntuacion}      Vida: {vida}", align="center", font="Courier")
     print("Has perdido una vida se reiniciará al inicio con tu cuerpo compleato")
 
+def evitar_cierre():
+    print("No puedes cerrar la ventana con la X. Usa 'q' para salir.")
 
+def cerrar():
+    global salir
+    salir = True
 print("Bienvenido snake pro, que disfrute el juego.")
 try:  
-    while puntuacion <= 1000:
+    while puntuacion <= 1000 and salir == False:
         # Actualizamos la ventana continuamente, para que muestre los cambios
+        ventana.onkeypress(cerrar, "q")
         ventana.update()
         if cabeza.distance(comida) < 20:
-            comidaPlus.hideturtle()
             nuevo_segmento = turtle.Turtle()
             nuevo_segmento.speed(0)
             nuevo_segmento.shape("square")
@@ -196,12 +204,14 @@ try:
             segmentos.append(nuevo_segmento)
 
             if(cabeza.distance(comidaPlus) < 20):
+                comidaPlus.hideturtle()
                 nuevo_segmento2 = turtle.Turtle()
                 nuevo_segmento2.speed(0)
                 nuevo_segmento2.shape("square")
                 nuevo_segmento2.color("pink")
                 nuevo_segmento2.penup()
                 segmentos.append(nuevo_segmento2)
+                segmentos[len(segmentos) -1].goto(400, 400)
                 puntuacion += 10
 
             puntuacion += 10
@@ -272,9 +282,13 @@ try:
                     reiniciarCuerpo()     
             
         time.sleep(retrasar)
-    
-    print("wow, que locura")
-    tkinter.messagebox.showinfo("no me jodas", "En serio te gastas el tiempo de tu vida en esto, ya me jodería :)\n MANDA CAPTURA DE ESTE MENSAJE AL CREADOR") 
-    turtle.Screen()._root.protocol("WM_DELETE_WINDOW")
+        turtle.Screen()._root.protocol("WM_DELETE_WINDOW", evitar_cierre)
+
+    if(salir == False):
+        print("wow, que locura")
+        tkinter.messagebox.showinfo("no me jodas", "En serio te gastas el tiempo de tu vida en esto, ya me jodería :)\n MANDA CAPTURA DE ESTE MENSAJE AL CREADOR") 
+        turtle.Screen()._root.protocol("WM_DELETE_WINDOW")
+    else:
+        print("A chuparla ya de aquí")
 except turtle.Terminator:
     print("A chuparla ya de aquí")
